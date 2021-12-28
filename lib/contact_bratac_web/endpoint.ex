@@ -48,9 +48,4 @@ defmodule ContactBratacWeb.Endpoint do
   plug Plug.Session, @session_options
   plug ContactBratacWeb.Router
 
-  check_origin: [
-    "https://bratac.net",
-    "https://contact.bratac.net",
-    "https://izberi.site"
-    ]
 end
