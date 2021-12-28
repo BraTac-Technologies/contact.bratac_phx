@@ -18,6 +18,7 @@ defmodule ContactBratacWeb.Router do
     pipe_through :browser
 
     live "/", IndexLive
+    resources "/contacts", ContactController
   end
 
   # Other scopes may use custom stacks.
