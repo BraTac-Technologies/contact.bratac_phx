@@ -17,6 +17,6 @@ defmodule ContactBratac.Contacts.Contact do
   def changeset(contact, attrs) do
     contact
     |> cast(attrs, [:first_name, :last_name, :email, :phone, :subject, :message])
-    |> validate_required([:first_name, :last_name, :email, :phone, :subject, :message])
+    |> validate_required([:first_name, :email, :subject, :message])
   end
 end
