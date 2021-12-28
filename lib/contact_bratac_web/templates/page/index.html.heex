@@ -26,7 +26,7 @@
       <!--Nav-->
       <div class="w-full container mx-auto">
         <div class="w-full flex items-center justify-between">
-          <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" target="_blank" href="https://bratac.net">
+          <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="https://bratac.net">
             BraTac<span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">Technologies</span>
           </a>
 
@@ -63,76 +63,59 @@
             now!
           </h1>
           <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
-            We will respond you by email within 2 working days
+            We will respond you by email within a week
           </p>
 
-          <form class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
+          <.form let={f} for={@changeset}, phx-submit="create_comment", class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
+
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
                 <!-- As we all know fields with <b> * </b> are necessary -->
-                Your name
+                Your name / Вашето име *
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
-                type="text"
-                placeholder="Bai Ivan Starozagorski"
-              />
+
+              <%= text_input f, :first_name, class: "shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out", placeholder: "Bai Ivan" %>
+
             </div>
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
-                Your email
+                Your email / Вашият имейл *
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
-                type="text"
-                placeholder="gosho@bratac.net"
-              />
+
+              <%= email_input f, :email, class: "shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out", placeholder: "gosho@bratac.net" %>
+
             </div>
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
-                Your phone
+                Your phone / Вашият тел номер
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
-                type="text"
-                placeholder="0123443210"
-              />
+
+              <%= telephone_input f, :phone, class: "shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out", placeholder: "+359 898 ..." %>
+
             </div>
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
-                The Subject
+                The Subject / Тема *
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
-                type="text"
-                placeholder="A Question for making a website for me"
-              />
+
+              <%= text_input f, :subject, class: "shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out", placeholder: "A question about / Въпрос за ..." %>
+
             </div>
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
-                Write the message
+                Write the message / Вашето съобщение *
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
-                type="text"
-                placeholder="I want this and this..."
-              />
+
+              <%= textarea f, :message, class: "shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out", placeholder: "..." %>
+
             </div>
 
             <div class="flex items-center justify-between pt-4">
-              <button
-                class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                type="button"
-              >
-                Send it
-              </button>
+
+              <%= submit "Send / Изпрати", class: "bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out" %>
+
             </div>
-          </form>
+          </.form>
         </div>
 
         <!--Right Col-->
@@ -152,7 +135,7 @@
 
         <!--Footer-->
         <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-          <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2019-2021</a>
+          <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2019-2022</a>
 
           <a class="text-gray-500 no-underline hover:no-underline" target="_blank" href="https://bratac.net">BraTac.net</a>
         </div>
