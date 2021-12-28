@@ -26,9 +26,9 @@ defmodule ContactBratacWeb.IndexLive do
 
 
     case Contacts.create_contact(attrs) do
-      {:ok, comment} ->
+      {:ok, contact} ->
 
-        changeset = Contacts.change_comment(%Contact{})
+        changeset = Contacts.change_contact(%Contact{})
         socket = put_flash(socket, :success, "Contact sent successfully!")
         socket = assign(socket, changeset: changeset)
 
