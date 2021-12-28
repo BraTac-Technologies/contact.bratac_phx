@@ -29,7 +29,7 @@ defmodule ContactBratacWeb.IndexLive do
       {:ok, contact} ->
 
         changeset = Contacts.change_contact(%Contact{})
-        socket = put_flash(socket, :success, "Contact sent successfully!")
+        socket = put_flash(socket, :info, "Message sent successfully!")
         socket = assign(socket, changeset: changeset)
 
         {:noreply, socket}
