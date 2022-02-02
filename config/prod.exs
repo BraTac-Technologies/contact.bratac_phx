@@ -17,15 +17,18 @@ config :contact_bratac, ContactBratac.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
-config :contact_bratac, ContactBratacWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
-
 
 config :contact_bratac, ContactBratacWeb.Endpoint,
-  check_origin: ["https://bratac.net", "https://www.bratac.net"]
-
+  url: [host: "bratac.net", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+config :offside_phx, OffsidePhxWeb.Endpoint,
+  # url: [scheme: "https", host: "offside24.net", port: 443]
+  check_origin: ["https://bratac.net", "https://www.bratac.net"]
+
 
 # ## SSL Support
 #
