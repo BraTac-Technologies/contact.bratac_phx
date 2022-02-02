@@ -25,7 +25,7 @@ config :contact_bratac, ContactBratacWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :offside_phx, OffsidePhxWeb.Endpoint,
+config :contact_bratac, ContactBratacWeb.Endpoint,
   # url: [scheme: "https", host: "offside24.net", port: 443]
   check_origin: ["https://bratac.net", "https://www.bratac.net"]
 
