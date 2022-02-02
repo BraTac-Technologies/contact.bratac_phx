@@ -13,12 +13,15 @@ config :contact_bratac, ContactBratac.Repo,
   username: "postgres",
   password: "postgres",
   database: "contact_bratac_prod",
-  hostname: "contact.bratac.net",
+  hostname: "bratac.net",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+config :contact_bratac, ContactBratacWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
+
+
 config :contact_bratac, ContactBratacWeb.Endpoint,
-  check_origin: ["https://contact.bratac.net", "https://www.contact.bratac.net"]
+  check_origin: ["https://bratac.net", "https://www.bratac.net"]
 
 
 # Do not print debug messages in production
